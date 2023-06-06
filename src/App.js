@@ -1,50 +1,22 @@
-import {RegularList} from "./components/RegularList"
-import {LargeProductListItem} from "./components/layout-components/LargeProductListItem"
-import {NumberList} from "./components/NumberList"
-import {Modal} from "./components/layout-components/Modal"
+import {CurrentUserLoader} from "./components/container-component/CurrentUserLoader"
+import {UserLoader} from "./components/container-component/UserLoader"
+import {UserInfo} from "./components/container-component/UserInfo";
+import {ResourceLoader} from "./components/container-component/ResourceLoader"
 
-const people = [{
-    name: 'John Doe',
-    age: 54,
-    hairColor: 'brown',
-    hobbies: ['swimming', 'bicycling', 'video games'],
-}, {
-    name: 'Brenda Smith',
-    age: 33,
-    hairColor: 'black',
-    hobbies: ['golf', 'mathematics'],
-}, {
-    name: 'Jane Garcia',
-    age: 27,
-    hairColor: 'blonde',
-    hobbies: ['biology', 'medicine', 'gymnastics'],
-}];
-
-const products = [{
-    name: 'Flat-Screen TV',
-    price: '$300',
-    description: 'Huge LCD screen, a great deal',
-    rating: 4.5,
-}, {
-    name: 'Basketball',
-    price: '$10',
-    description: 'Just like the pros use',
-    rating: 3.8,
-}, {
-    name: 'Running Shoes',
-    price: '$120',
-    description: 'State-of-the-art technology for optimum running',
-    rating: 4.2,
-}];
+const userIds = ['123', '234', '345']
 
 function App() {
     return (
         <>
-            <Modal>
-                <LargeProductListItem product={products[0]}/>
-            </Modal>
+            {userIds.map((id) =>
+                <UserLoader userId={id}>
+                    <UserInfo/>
+                </UserLoader>
+            )}
+
         </>
     );
+
 }
 
 export default App;
