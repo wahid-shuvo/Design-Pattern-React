@@ -14,7 +14,7 @@ function App() {
             </ControlledModal>
 
             <button onClick={() =>
-                setshouldShowModal()(!shouldShowModal)}
+                setshouldShowModal(!shouldShowModal)}
             >
                 {shouldShowModal ? 'Hide Modal' : 'Show Modal'}
             </button>
