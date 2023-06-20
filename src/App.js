@@ -1,16 +1,30 @@
-import {UserInfo} from "./components/custom-hooks-pattern/UserInfo";
-import {withUser} from "./components/higher-order-components/withUser";
-import {ProductInfo, productInfo} from "./components/container-component/ProductInfo"
+import { RecursiveComponent } from "./components/recursive-component/RecursiveComponent";
 
-const UserInfoWithLoader = withUser(UserInfo, '234')
+const nestedObject = {
+    a: 1,
+    b: {
+        b1: 4,
+        b2: {
+            b23: 'Hello',
+        },
+        b3: {
+            b31: {
+                message: 'Hi',
+            },
+            b32: {
+                message: 'Hi',
+            }
+        }
+    },
+    c: {
+        c1: 2,
+        c2: 3,
+    }
+}
 
 function App() {
-
     return (
-        <>
-            <UserInfo userId={"123"}/>
-            <ProductInfo productId={"1234"}/>
-        </>
+        <RecursiveComponent data={nestedObject} />
     );
 }
 
