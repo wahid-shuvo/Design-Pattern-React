@@ -1,17 +1,36 @@
-import {UserInfo} from "./components/custom-hooks-pattern/UserInfo";
-import {withUser} from "./components/higher-order-components/withUser";
-import {ProductInfo, productInfo} from "./components/container-component/ProductInfo"
 
-const UserInfoWithLoader = withUser(UserInfo, '234')
+import {DangerButton,BigSuccessButton} from "./components/recursive-component/PartiallyApply";
+const nestedObject = {
+    a: 1,
+    b: {
+        b1: 4,
+        b2: {
+            b23: 'Hello',
+        },
+        b3: {
+            b31: {
+                message: 'Hi',
+            },
+            b32: {
+                message: 'Hi',
+            }
+        }
+    },
+    c: {
+        c1: 2,
+        c2: 3,
+    }
+}
 
 function App() {
-
     return (
         <>
-            <UserInfo userId={"123"}/>
-            <ProductInfo productId={"1234"}/>
+            <DangerButton text="Don't do it!" />
+            <BigSuccessButton text="Yes!!!" />
         </>
     );
 }
+
+
 
 export default App;
