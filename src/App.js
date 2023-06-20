@@ -1,7 +1,5 @@
-import { RecursiveComponent } from "./components/recursive-component/RecursiveComponent";
-import {DangerButton} from "./components/recursive-component/composition";
-import {BigSuccessButton} from "./components/recursive-component/composition";
 
+import {DangerButton,BigSuccessButton} from "./components/recursive-component/PartiallyApply";
 const nestedObject = {
     a: 1,
     b: {
@@ -32,6 +30,7 @@ function App() {
         </>
     );
 }
+
 
 
 export default App;
