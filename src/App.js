@@ -1,14 +1,13 @@
-import {printProps} from "./components/higher-order-components/printProps"
-import {UserInfo} from "./components/container-component/UserInfo";
-import {withUser} from "./components/higher-order-components/withUser";
-import {UserInfoForm} from "./components/higher-order-components/UserInfoForm";
-
-const UserInfoWithLoader = withUser(UserInfo, '234')
+import {UserInfo} from "./components/custom-hooks-pattern/UserInfo";
 
 function App() {
 
     return (
-        <UserInfoForm/>
+        <>
+            <UserInfo userId="123"/>
+            <UserInfo userId="234"/>
+            <UserInfo userId="345"/>
+        </>
     );
 }
 
